@@ -289,24 +289,38 @@ section {
 }
 
 .section__pic-container {
-  display: flex;
   height: 400px;
   width: 400px;
   margin: auto 0;
-  border-radius: 50%;
   overflow: hidden;
-  flex-shrink: 0;
-  min-width: 200px;
-  min-height: 200px;
-  max-width: 400px;
-  max-height: 400px;
+  /* Hide overflow to ensure circle shape */
+  border-radius: 50%;
+  /* Make the container circular */
+  display: flex;
+  /* Center the image */
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
 }
 
 .section__pic-container img {
-  height: 100%;
   width: 100%;
+  /* Fill the container */
+  height: 100%;
+  /* Maintain aspect ratio */
   object-fit: cover;
-  object-position: top;
+  /* Cover the container without distortion */
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 600px) {
+  .section__pic-container {
+    height: 200px;
+    /* Adjust height for mobile */
+    width: 200px;
+    /* Adjust width for mobile */
+  }
 }
 
 .section__text {
@@ -449,27 +463,11 @@ section {
   display: flex;
 }
 
-.profile-pic,
 .about-pic {
-  width: 100px;
-  /* Set the desired width */
-  height: 100px;
-  /* Set the height equal to width */
-  border-radius: 50%;
-  /* Make it circular */
-  object-fit: cover;
-  /* Ensures the image covers the circle without distortion */
-}
-/* Adjust for smaller screens */
-@media (max-width: 600px) {
-
-  .profile-pic,
-  .about-pic {
-    width: 80px;
-    /* Adjust width for mobile */
-    height: 80px;
-    /* Adjust height to match */
-  }
+  width: 100px; /* Set the desired width */
+  height: 100px; /* Set the height equal to width */
+  border-radius: 50%; /* Make it circular */
+  object-fit: cover; /* Ensures the image covers the circle without distortion */
 }
 
 .arrow {

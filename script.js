@@ -72,5 +72,3 @@ document.addEventListener('mousemove', (e) => {
     trail.remove();
   }, 500);  // Remove after animation
 });
-
-
