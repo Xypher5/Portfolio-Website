@@ -96,7 +96,20 @@ a,
 
 /* Vibrant Moving Liquid Gradient Background */
 body {
-  background: linear-gradient(135deg, #ff6b6b, #ffcc33, #33ccff, #ff33cc);
+  background: linear-gradient(135deg, 
+   #ff6b6b,
+          /* Red */
+    #ffcc33,
+          /* Yellow */
+          #33ccff,
+          /* Blue */
+          #8e44ad,
+          /* Purple */
+          #39cfb1,
+          /* Teal */
+          #f39c12
+          /* Orange */
+  );
   background-size: 400% 400%;
   animation: liquidMove 6s ease infinite;
   font-family: "Poppins", sans-serif;
@@ -289,30 +302,25 @@ section {
 }
 
 .section__pic-container {
-  height: 400px;
-  width: 400px;
-  margin: auto 0;
-  overflow: hidden;
-  /* Hide overflow to ensure circle shape */
-  border-radius: 50%;
-  /* Make the container circular */
   display: flex;
-  /* Center the image */
-  justify-content: center;
-  /* Center horizontally */
-  align-items: center;
-  /* Center vertically */
+  height: auto;
+  width: auto;
+  margin: auto 0;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  min-width: 200px;
+  min-height: 200px;
+  max-width: 400px;
+  max-height: 400px;
 }
 
 .section__pic-container img {
-  width: 100%;
-  /* Fill the container */
   height: 100%;
-  /* Maintain aspect ratio */
+  width: 100%;
   object-fit: cover;
-  /* Cover the container without distortion */
+  object-position: top;
 }
-
 
 .section__text {
   align-self: center;
@@ -455,10 +463,7 @@ section {
 }
 
 .about-pic {
-  width: 100px; /* Set the desired width */
-  height: 100px; /* Set the height equal to width */
-  border-radius: 50%; /* Make it circular */
-  object-fit: cover; /* Ensures the image covers the circle without distortion */
+  border-radius: 2rem;
 }
 
 .arrow {
@@ -487,6 +492,7 @@ section {
   width: 400px;
   margin: auto 0;
 }
+
 
 /* EXPERIENCE SECTION */
 
