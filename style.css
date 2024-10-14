@@ -449,8 +449,27 @@ section {
   display: flex;
 }
 
+.profile-pic,
 .about-pic {
-  border-radius: 2rem;
+  width: 100px;
+  /* Set the desired width */
+  height: 100px;
+  /* Set the height equal to width */
+  border-radius: 50%;
+  /* Make it circular */
+  object-fit: cover;
+  /* Ensures the image covers the circle without distortion */
+}
+/* Adjust for smaller screens */
+@media (max-width: 600px) {
+
+  .profile-pic,
+  .about-pic {
+    width: 80px;
+    /* Adjust width for mobile */
+    height: 80px;
+    /* Adjust height to match */
+  }
 }
 
 .arrow {
