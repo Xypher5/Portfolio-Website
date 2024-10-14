@@ -6,6 +6,25 @@ function toggleMenu() {
   icon.classList.toggle("open");
 }
 
+//PRE LOADER OPENING LOGO
+
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  const gif = document.getElementById('preloader-gif');
+
+  // Assume the GIF animation duration is 3 seconds
+  const gifDuration = 3000; // Change this to the actual duration of your GIF in milliseconds
+
+  // Hide the preloader after the GIF ends
+  setTimeout(() => {
+    preloader.style.transition = 'opacity 0.5s';
+    preloader.style.opacity = '0';
+    setTimeout(() => {
+      preloader.style.display = 'none';
+    }, 500); // Matches the transition duration
+  }, gifDuration);
+});
+
 // TYPING EFFECT
 
 const logoElement = document.getElementById('logo');
@@ -54,32 +73,4 @@ document.addEventListener('mousemove', (e) => {
   }, 500);  // Remove after animation
 });
 
-// VIRTUAL PET EFFECT
-
-const pet = document.getElementById('virtual-pet');
-
-pet.addEventListener('mousedown', function (e) {
-  let shiftX = e.clientX - pet.getBoundingClientRect().left;
-  let shiftY = e.clientY - pet.getBoundingClientRect().top;
-
-  function moveAt(pageX, pageY) {
-    pet.style.left = pageX - shiftX + 'px';
-    pet.style.top = pageY - shiftY + 'px';
-  }
-
-  function onMouseMove(event) {
-    moveAt(event.pageX, event.pageY);
-  }
-
-  document.addEventListener('mousemove', onMouseMove);
-
-  pet.onmouseup = function () {
-    document.removeEventListener('mousemove', onMouseMove);
-    pet.onmouseup = null;
-  };
-
-  pet.ondragstart = function () {
-    return false;
-  };
-});
 
