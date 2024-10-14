@@ -313,15 +313,6 @@ section {
   /* Cover the container without distortion */
 }
 
-/* Adjust for smaller screens */
-@media (max-width: 600px) {
-  .section__pic-container {
-    height: 200px;
-    /* Adjust height for mobile */
-    width: 200px;
-    /* Adjust width for mobile */
-  }
-}
 
 .section__text {
   align-self: center;
